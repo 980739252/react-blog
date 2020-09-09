@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import Header from '../components/Header'
+import Header from '../components/Header.js'
 
  function Home() {
   return (
@@ -8,7 +8,7 @@ import Header from '../components/Header'
       <Head>
         <title>Home</title>
       </Head>
-      <Header/>
+       <Header/>
     </>
    
   )
