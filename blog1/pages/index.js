@@ -4,6 +4,7 @@ import Header from '../components/Header.js'
 import {CalendarFilled,FolderFilled,FireFilled} from "@ant-design/icons"
 import {Row,Col,List} from 'antd'
 import '../public/pages/index.css'
+import Author from '../components/Author'
  function Home() {
   const [ mylist , setMylist ] = useState(
     [
@@ -29,16 +30,16 @@ import '../public/pages/index.css'
                 <List.Item>
                   <div className="list-title">{item.title}</div>
                   <div className="list-icon">
-                    <span><CalendarFilled /> 2020-09-11</span>
-                    <span><FolderFilled /> 视频教程</span>
-                    <span> <FireFilled /> 899人</span>
+                    <span><CalendarFilled />2020-09-11</span>
+                    <span><FolderFilled />视频教程</span>
+                    <span> <FireFilled />899人</span>
                   </div>
                   <div className="list-context">{item.context}</div>
                 </List.Item>
               )}
             />
           </Col>
-          <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>右侧</Col>
+          <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}><Author/></Col>
        </Row>
     </>
    
