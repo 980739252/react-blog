@@ -7,7 +7,7 @@ function  Author(){
     return(
         <div className="author-div comm-box">
            <div><Avatar size={100} src=""/></div>
-           <div div className="author-introduction">
+           <div className="author-introduction">
                OooOOOOO
            
            <Divider>社交账号</Divider>

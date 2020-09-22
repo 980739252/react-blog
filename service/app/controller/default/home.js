@@ -23,6 +23,7 @@ class HomeController extends Controller {
  async getArticleById(){
   let id = this.ctx.params.id
 
+
   let sql = 'SELECT article.id as id,'+
   'article.title as title,'+
   'article.introduce as introduce,'+
@@ -34,12 +35,16 @@ class HomeController extends Controller {
   'WHERE article.id='+id
 
 
+  const results = await this.app.mysql.query(sql)
 
-  const result = await this.app.mysql.query(sql)
 
-
-  this.ctx.body={data:result}
+  this.ctx.body={data:results}
     
+ }
+ //得到类别名称和编号
+ async getTypeInfo(){
+   const result = await this.app.mysql.select('type')
+   this.ctx.body = {data:result}
  }
 }
 

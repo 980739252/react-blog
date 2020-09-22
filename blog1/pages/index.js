@@ -2,12 +2,13 @@ import React,{useState} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import axios from 'axios'
-import Header from '../components/Header.js'
+import Header from '../components/Header'
 import {CalendarFilled,FolderFilled,FireFilled} from "@ant-design/icons"
 import {Row,Col,List,Breadcrumb} from 'antd'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
+import  servicePath from '../config/apiUrl'
  function Home(list) {
   const [ mylist , setMylist ] = useState(list.data)
   return (
@@ -56,8 +57,8 @@ import Footer from '../components/Footer'
 
 Home.getInitialProps = async()=>{
   const promise = new Promise((resolve)=>{
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
-      (res)=>{
+    axios(servicePath.getArticleList).then(
+      (res)=>{ 
         resolve(res.data)
       }
     )
