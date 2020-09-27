@@ -29,8 +29,9 @@ module.exports = appInfo => {
     　　　　domainWhiteList: [ '*' ]
     　　};
   config.cors = {
-        origin: '*',
-        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+        origin: 'http://localhost:3000',
+        credentials:true,//允许Cookie跨域
+        allowMethods:'GET, HEAD, PUT, POST, DELETE, PATCH, OPTIONS, UPDATE'
     };
   config.mysql = {
     // database configuration

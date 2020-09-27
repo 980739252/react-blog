@@ -3,9 +3,10 @@
 /** @type Egg.EggPlugin */
 exports.mysql = {
   enable: true,
-  package:'egg-mysql'
-}
+  package: 'egg-mysql',
+};
+
 exports.cors = {
-  enable:true,
-  package:'egg-cors'
-}
+  enable: true,
+  package: 'egg-cors',
+};

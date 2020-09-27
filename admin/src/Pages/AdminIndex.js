@@ -14,10 +14,10 @@ import {
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-function AdminIndex(){
+function AdminIndex(props){
   const [ collapsed,setCollapsed] = useState(false)
 
-   const onCollapse = collapsed => {
+  const onCollapse = collapsed => {
       setCollapsed(true)
   };
 
@@ -54,7 +54,7 @@ function AdminIndex(){
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <div>
-                <Route path="/index/" exact component={AddArticle}/>
+                <Route path="/AdminIndex" exact component={AddArticle}/>
               </div>
              
             </div>
