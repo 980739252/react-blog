@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../static/css/AdminIdex.css";
 import { Route } from "react-router-dom";
 import AddArticle from "./AddArticle";
+import ArticleList from "./ArticleList";
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -18,14 +19,15 @@ function AdminIndex(props) {
   const [collapsed, setCollapsed] = useState(false);
 
   const onCollapse = (collapsed) => {
-    setCollapsed(true);
+    setCollapsed(collapsed);
   };
   const handleClickArticle = (e) => {
     console.log(e.item.props);
-    if (e.key == "addArticle") {
-      props.history.push("/AdminIndex/add/");
+    console.log(e.key);
+    if (e.key === 'addArticle') {
+      props.history.push('/Admin/add');
     } else {
-      props.history.push("AdminIndex/list");
+      props.history.push("/Admin/list");
     }
   };
   return (
@@ -45,8 +47,8 @@ function AdminIndex(props) {
             onClick={handleClickArticle}
             title={"文章管理"}
           >
-            <Menu.Item key="addArticle ">添加文章</Menu.Item>
-            <Menu.Item key="articleList">文章列表</Menu.Item>
+            <Menu.Item key="addArticle">添加文章</Menu.Item>
+            <Menu.Item key="ArticleList">文章列表</Menu.Item>
           </SubMenu>
 
           <Menu.Item key="9" icon={<FileOutlined />}>
@@ -66,7 +68,10 @@ function AdminIndex(props) {
             style={{ padding: 24, minHeight: 360 }}
           >
             <div>
-              <Route path="/AdminIndex" exact component={AddArticle} />
+              <Route path="/Admin" exact component={AddArticle} />
+              <Route path="/Admin/add/" component={AddArticle} />
+              <Route path="/Admin/list/" component={ArticleList} />
+              <Route path="/Admin/add/:id" component={AddArticle} />
             </div>
           </div>
         </Content>

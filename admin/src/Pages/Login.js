@@ -39,7 +39,7 @@ function Login(props) {
       setIsLoading(false);
       if (res.data.data == "登录成功") {
         localStorage.setItem("openId", res.data.openId);
-        props.history.push("/AdminIndex");
+        props.history.push("/Admin");
       } else {
         message.error("用户名密码错误");
       }
@@ -48,7 +48,7 @@ function Login(props) {
   return (
     <div className="login-div">
       <Spin tip="Loading..." spinning={isLoading}>
-        <Card title="" bordered={true} style={{ width: 400 }}>
+        <Card title="夜深人静街道的风" bordered={true} style={{ width: 400 }}>
           <Input
             id="userName"
             size="large"

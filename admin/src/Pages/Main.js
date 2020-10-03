@@ -8,10 +8,10 @@ function Main() {
   return (
     <Router>
       <Route path="/" exact component={Login} />
-      <Route path="/AdminIndex/" exact component={AdminIndex} />
-      <Route path="/AdminIndex/add/" exact component={AddArticle} />
-      <Route path="/AdminIndex/list/" exact component={ArticleList} />
-      <Route path="/AdminIndex/add/:id" exact component={AddArticle} />
+      <Route path="/Admin/" component={AdminIndex} />
+      {/* <Route path="/AdminIndex/add/" exact component={AddArticle} /> */}
+      {/* <Route path="/AdminIndex/list/" exact component={ArticleList} />
+      <Route path="/AdminIndex/add/:id" exact component={AddArticle} /> */}
     </Router>
   );
 }
